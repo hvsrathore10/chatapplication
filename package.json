@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Websockets practice with Chat Application",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/hvsrathore10/chatapplication/issues"
   },
-  "homepage": "https://github.com/hvsrathore10/chatapplication#readme"
+  "homepage": "https://github.com/hvsrathore10/chatapplication#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "socket.io": "^4.7.2",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
 }
