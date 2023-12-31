@@ -1,3 +1,14 @@
+/*
+*Here are some ideas to improve the application:
+1.Broadcast a message to connected users when someone connects or disconnects.
+2.Add support for nicknames.
+3.Don’t send the same message to the user that sent it. 
+Instead, append the message directly as soon as they press enter.
+4.Add “{user} is typing” functionality.
+5.Show who’s online.
+6.Add private messaging.
+*/
+
 import express from 'express';
 import { createServer } from 'node:http';
 import { fileURLToPath } from 'node:url';
@@ -58,13 +69,12 @@ if (cluster.isPrimary) {
   });
 
   io.on('connection', async (socket) => {
-    socket.on('chat message', async (msg) => {
+    socket.on('chat message', async (msg,clientOffset) => {
       let result;
       try {
         // store the message in the database
-        result = await db.run('INSERT INTO messages (content) VALUES (?)', msg);
+        result = await db.run('INSERT INTO messages (content, client_offset) VALUES (?, ?)', msg, clientOffset);
       } catch (e) {
-        // TODO handle the failure
         console.log('msg not store in db!');
         return;
       }
@@ -93,4 +103,7 @@ if (cluster.isPrimary) {
   server.listen(port, () => {
     console.log(`server running at http://localhost:${port}`);
   });
+  // Fetch all rows from the messages table
+  const allMessages = await db.all('SELECT * FROM messages');
+  console.log(allMessages);
 }
