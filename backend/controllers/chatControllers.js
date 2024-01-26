@@ -118,11 +118,9 @@ const renameGroup = asyncHandler(async (req, res) => {
   const { chatId, chatName } = req.body;
 
   const updatedChat = await Chat.findByIdAndUpdate(
-    chatId,
-    {
+    chatId,{
       chatName: chatName,
-    },
-    {
+    },{
       new: true,
     }
   )
@@ -146,11 +144,9 @@ const removeFromGroup = asyncHandler(async (req, res) => {
   // check if the requester is admin
 
   const removed = await Chat.findByIdAndUpdate(
-    chatId,
-    {
+    chatId,{
       $pull: { users: userId },
-    },
-    {
+    },{
       new: true,
     }
   )
@@ -174,11 +170,9 @@ const addToGroup = asyncHandler(async (req, res) => {
   // check if the requester is admin
 
   const added = await Chat.findByIdAndUpdate(
-    chatId,
-    {
+    chatId,{
       $push: { users: userId },
-    },
-    {
+    },{
       new: true,
     }
   )

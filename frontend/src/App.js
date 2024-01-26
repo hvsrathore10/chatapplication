@@ -1,6 +1,6 @@
 import "./App.css";
 import Homepage from "./Pages/Homepage";
-// import Chatpage from "./Pages/Chatpage";
+import Chatpage from "./Pages/Chatpage";
 import {
   BrowserRouter,
   Routes,
@@ -15,11 +15,10 @@ export default function App() {
         <ChatProvider>
           <Routes>
             <Route path="/" element={<Homepage />} exact />
-            {/* <Route path="/chats" element={<Chatpage />} /> */}
+            <Route path="/chats" element={<Chatpage />} />
           </Routes>
         </ChatProvider>
       </BrowserRouter>
     </div>
-
   );
 }

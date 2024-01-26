@@ -10,17 +10,19 @@ import {
     Center
 } from "@chakra-ui/react";
 import { useEffect } from "react";
-// import { useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import Login from "../components/Authentication/Login";
 import Signup from "../components/Authentication/Signup";
 
 function Homepage() {
-    // const history = useNavigate();
+    const history = useNavigate();
 
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem("userInfo"));
 
-        // if (user) history("/chats");
+        // if (user){
+        //     history("/chats");
+        // } 
     }, []);
 
     return (

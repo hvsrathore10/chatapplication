@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "proxy" : "http://127.0.0.1:5000", 
+  "proxy": "http://127.0.0.1:5000",
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
@@ -15,8 +15,12 @@
     "framer-motion": "^10.18.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-lottie": "^1.2.4",
+    "react-notification-badge": "^1.5.1",
     "react-router-dom": "^6.21.1",
     "react-scripts": "5.0.1",
+    "react-scrollable-feed": "^2.0.1",
+    "socket.io-client": "^4.7.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

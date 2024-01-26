@@ -18,7 +18,7 @@ const userSchema = mongoose.Schema({
     pic: {
       type: "String",
       required: true,
-      default:"./public/images/userDefault.jpg",
+      default: "https://res.cloudinary.com/duovtuwdd/image/upload/v1706290141/userDefault_ruwebe.jpg",
     },
     isAdmin: {
       type: Boolean,
