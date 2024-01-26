@@ -1,11 +1,25 @@
-import './App.css';
+import "./App.css";
+import Homepage from "./Pages/Homepage";
+// import Chatpage from "./Pages/Chatpage";
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from "react-router-dom";
+import ChatProvider from "./Context/ChatProvider";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <h1>Hello Harsh</h1>
+      <BrowserRouter>
+        <ChatProvider>
+          <Routes>
+            <Route path="/" element={<Homepage />} exact />
+            {/* <Route path="/chats" element={<Chatpage />} /> */}
+          </Routes>
+        </ChatProvider>
+      </BrowserRouter>
     </div>
+
   );
 }
-
-export default App;
